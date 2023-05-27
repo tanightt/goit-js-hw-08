@@ -8,7 +8,7 @@ const STORAGE_KEY = "videoplayer-current-time";
 const onPlay = function (data) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); 
 };
-player.on('timeupdate', throttle(onPlay, 2000));
+player.on('timeupdate', throttle(onPlay, 1000));
 
 const timeKey = JSON.parse(localStorage.getItem(STORAGE_KEY));
 startTimeVideo();
