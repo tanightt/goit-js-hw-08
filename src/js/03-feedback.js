@@ -29,6 +29,9 @@ const formKey = localStorage.getItem(STORAGE_KEY);
 
 function onCleanLocalStorage(e) {
     e.preventDefault();
+    if (JSON.parse(localStorage.getItem(STORAGE_KEY)) === null || email.value === '' || message.value === '') {
+        return;
+    }
     console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
     email.value = '';
     message.value = '';
